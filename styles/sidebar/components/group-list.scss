@@ -1,0 +1,27 @@
+.group-list__content {
+  min-width: 250px;
+}
+
+.group-list__menu-label {
+  align-items: center;
+  color: $grey-6;
+  display: flex;
+
+  // Prevent label from wrapping if top bar is too narrow to fit all of its
+  // items.
+  flex-shrink: 0;
+
+  font-size: $body2-font-size;
+  font-weight: bold;
+}
+
+.group-list__menu-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 4px;
+
+  // A minor adjustment to make the default icon (the Hypothesis logo) align
+  // better with the text.
+  position: relative;
+  top: 1px;
+}

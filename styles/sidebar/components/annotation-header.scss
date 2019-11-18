@@ -1,0 +1,42 @@
+.annotation-header {
+  @include pie-clearfix;
+  // Margin between top of x-height of username and
+  // top of the annotation card should be ~15px
+  margin-top: -$layout-h-margin + 10px;
+  color: $grey-5;
+
+  &__row {
+    display: flex;
+    align-items: baseline;
+  }
+
+  // Timestamps are right aligned in a flex row
+  &__timestamp {
+    margin-left: auto;
+  }
+
+  &__timestamp-edited {
+    @include font-small;
+    font-style: italic;
+    color: $grey-4;
+  }
+
+  &__timestamp-created-link,
+  &__timestamp-edited-link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__timestamp-created-link {
+    color: $grey-5;
+  }
+
+  &__timestamp-edited-link {
+    color: $grey-4;
+  }
+
+  &__highlight {
+    margin-right: 5px;
+  }
+}

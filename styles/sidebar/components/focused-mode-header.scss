@@ -1,0 +1,25 @@
+// A dark grey button used for the primary action
+// in a form
+.focused-mode-header {
+  display: flex;
+  align-items: center;
+
+  &__btn {
+    @include primary-action-btn;
+    @include outline-on-keyboard-focus;
+    display: flex;
+    margin-left: auto;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: $grey-2;
+    color: $grey-5;
+    &:hover:enabled {
+      background-color: $grey-3;
+    }
+  }
+
+  &__filter-status {
+    font-weight: 400;
+  }
+}

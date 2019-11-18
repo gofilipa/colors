@@ -1,0 +1,106 @@
+@import '../base';
+@import '../forms';
+
+@import './styled-text';
+
+//ELEMENT STYLES////////////////////////////////
+body {
+  position: relative;
+  background-color: $body-background;
+  color: $text-color;
+}
+
+p {
+  hyphens: auto;
+
+  & + p {
+    margin: 1em 0 0;
+  }
+}
+
+em {
+  font-style: italic;
+}
+
+html {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+//MCRANDOM////////////////////////////////
+
+.small {
+  font-size: $body1-font-size;
+}
+
+//CLOSER////////////////////////////////
+.close {
+  cursor: pointer;
+  float: right;
+  opacity: 0.6;
+  &:active,
+  &:hover {
+    opacity: 1;
+  }
+}
+
+//FORM RELATED////////////////////////////////
+.form-vertical {
+  legend {
+    font-size: $body1-font-size;
+    line-height: $body1-line-height;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  select,
+  textarea,
+  input,
+  button {
+    display: block;
+    // margin-top: .75em;
+  }
+}
+
+//TABS////////////////////////////////
+.nav-tabs {
+  margin-bottom: 0.7em;
+
+  & > li {
+    display: inline-block;
+    line-height: 1;
+
+    a {
+      font-family: $sans-font-family;
+      font-weight: bold;
+      color: $gray-dark;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      padding-left: 0.153em;
+      padding-right: 0.153em;
+      padding-bottom: 0.076em;
+    }
+
+    &:active a {
+      position: relative;
+      top: 0.076em;
+    }
+
+    &.active:active a {
+      top: 0;
+    }
+
+    &.active a {
+      border-color: $gray-lighter;
+    }
+
+    &:before {
+      content: '/';
+      margin: 0 0.75em;
+    }
+
+    &:first-child:before {
+      content: none;
+    }
+  }
+}

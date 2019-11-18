@@ -1,0 +1,159 @@
+$base-font-size: 12px;
+$base-line-height: 20px;
+
+// Variables and mixins
+// --------------------
+@import '../variables';
+@import '../mixins/focus';
+@import '../mixins/responsive';
+
+// Base styles
+// -----------
+@import '../reset';
+@import './elements';
+
+// Misc. legacy :(
+// ---------------
+@import './common';
+
+// Components
+// ----------
+@import './components/annotation';
+@import './components/annotation-document-info';
+@import './components/annotation-header';
+@import './components/annotation-share-dialog';
+@import './components/annotation-share-info';
+@import './components/annotation-publish-control';
+@import './components/annotation-thread';
+@import './components/annotation-user';
+@import './components/excerpt';
+@import './components/focused-mode-header';
+@import './components/group-list';
+@import './components/group-list-item';
+@import './components/help-panel';
+@import './components/logged-out-message';
+@import './components/markdown';
+@import './components/menu';
+@import './components/menu-item';
+@import './components/menu-section';
+@import './components/moderation-banner';
+@import './components/new-note';
+@import './components/primary-action-btn';
+@import './components/search-status-bar';
+@import './components/selection-tabs';
+@import './components/share-link';
+@import './components/search-input';
+@import './components/sidebar-tutorial';
+@import './components/svg-icon';
+@import './components/spinner';
+@import './components/tags-input';
+@import './components/thread-list';
+@import './components/tooltip';
+@import './components/top-bar';
+
+// Top-level styles
+// ----------------
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @include grey-background;
+
+  font-family: $sans-font-family;
+  font-weight: normal;
+  -webkit-overflow-scrolling: touch;
+}
+
+hypothesis-app {
+  display: block;
+  height: 100%;
+}
+
+.app-content-wrapper {
+  $sidebar-h-padding: 9px;
+
+  @include grey-background;
+
+  min-height: 100%;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: $sidebar-h-padding;
+  padding-top: $sidebar-h-padding + $top-bar-height;
+
+  @include respond-to(tablets desktops) {
+    padding-bottom: 4rem;
+  }
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond-to(tablets desktops) {
+    margin: auto;
+    max-width: $break-tablet;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+// Elements in root template (viewer.html)
+// ---------------------------------------
+
+.sheet {
+  border: solid 1px $gray-lighter;
+  border-radius: 2px;
+  font-family: $sans-font-family;
+  font-weight: 300;
+  margin-bottom: 0.72em;
+  padding: 1em;
+  position: relative;
+  background-color: $body-background;
+
+  .nav-tabs {
+    border: 1px none $gray-lighter;
+    border-bottom-style: solid;
+    padding: 0 0 1.1em;
+    li a {
+      padding-bottom: 0.231em;
+    }
+  }
+
+  .close {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+  }
+}
+
+.sheet--is-theme-clean {
+  padding-left: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.annotation-unavailable-message {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $gray-lighter;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 3px;
+  align-items: center;
+
+  &__label {
+    text-align: center;
+  }
+
+  &__icon {
+    background-image: url(../images/icons/lock.svg);
+    background-repeat: no-repeat;
+    width: 56px;
+    height: 48px;
+  }
+}
